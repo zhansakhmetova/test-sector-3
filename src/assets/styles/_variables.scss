@@ -1,0 +1,90 @@
+@import '~bootstrap/scss/functions';
+@import '~bootstrap/scss/variables';
+@import '~bootstrap/scss/mixins';
+@import "functions";
+
+// colors
+$colors: map-merge(
+    $colors,
+    (
+      'black': #1D1E23,
+      'background-color': #F7FBFE,
+      'blue': #3D6AEB,
+      'gray': #787775,
+      'light-gray': #8F9FA7,
+      'white': #FFFFFF,
+      'white-background': #F7F9FB
+    )
+);
+
+$body-color: color('black');
+$theme-colors: $colors;
+$utilities-text-colors: $colors;
+$utilities-bg-colors: $theme-colors;
+$theme-colors-rgb: map-loop($theme-colors, to-rgb, '$value');
+
+// fonts
+$font-family-base: 'Avenir', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans',
+sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+$font-family-sans-serif: $font-family-base;
+$font-weight-base: 400;
+$font-size-base: 1rem;
+$font-weight-extra-bold: 800;
+
+// grid
+$grid-columns: 16;
+$grid-breakpoints: (
+  xs: 0,
+  sm: 480px,
+  md: 768px,
+  lg: 992px,
+  xl: 1200px,
+  xxl: 1400px,
+  xxxl: 1600px,
+);
+$container-max-widths: (
+  sm: 540px,
+  md: 720px,
+  lg: 960px,
+  xl: 1135px,
+  // xxl: 1135px,
+);
+
+// spacers
+$spacer: 1rem;
+$spacers: (
+  0: 0,
+  '025': 0.25rem,
+);
+@for $i from 1 through 35 {
+  $currentSpacer: (#{$i}: $spacer * $i * 0.5);
+  $spacers: map-merge($currentSpacer, $spacers);
+}
+
+// negative margins
+$enable-negative-margins: true;
+
+// headings
+$headings-line-height: 1.6;
+
+$h1-font-size: $font-size-base * 2.5;
+$h2-font-size: $font-size-base * 2;
+$h3-font-size: $font-size-base * 1.75;
+$h4-font-size: $font-size-base * 1.5;
+$h5-font-size: $font-size-base * 1.25;
+$h6-font-size: $font-size-base * 0.85;
+
+$headings-font-weight: $font-weight-base;
+
+// buttons
+$btn-focus-box-shadow: none;
+$btn-border-radius: 0;
+$btn-padding-y: 0.75rem;
+$btn-padding-x: 0.875rem;
+$btn-font-size: 0.8125rem;
+
+// nav
+$navbar-nav-link-padding-x: 1rem;
+
+// shadow
+$box-shadow-sm: 0px 0.5rem 1.25rem rgba($gray-300, 0.5);

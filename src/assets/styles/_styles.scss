@@ -1,0 +1,13 @@
+@import "bootstrap";
+@import "functions";
+@import "variables";
+
+
+body {
+  background: var(--bs-background-color);
+}
+
+
+.fw-500 {
+  font-weight: 500;
+}
